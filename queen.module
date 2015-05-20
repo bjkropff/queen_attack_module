@@ -3,7 +3,7 @@ function queen_menu() {
     $items['queen'] = array(
         'title' => "Queen",
         'page callback' => 'drupal_get_form',
-        'page argument' => array('')
+        'page argument' => array('queen_form')
         'access callback' => TRUE,
         'type' => MENU_NORMAL_ITEM,
     );
@@ -12,7 +12,7 @@ function queen_menu() {
         'page callback' => 'queen_attack',
         'access callback' => TRUE,
         'type' => MENU_CALLBACK,
-    )
+    );
 
     return $items;
 }
