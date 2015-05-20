@@ -1,0 +1,5 @@
+name = Queen Attack
+description = Calculate if a queen on a chessboard is in range of a target.
+package = Epicodus Examples
+core = 7.x
+files[] = queen.module
