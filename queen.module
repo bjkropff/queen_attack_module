@@ -55,12 +55,13 @@ function queen_form_submit($form, &$form_state) {
 
     if($start_x == $end_x && $start_y == $end_y) {
         $attack = "This is an impossible situation. Try again.";
-    }
+    } else{
 
-    if(abs($start_x - $start_y) == abs($end_x - $end_y)) {
-        $attack = "In range.";
-    } else {
-        $attack = "Not in range";
+        if(abs($start_x - $start_y) == abs($end_x - $end_y)) {
+            $attack = "In range.";
+        } else {
+            $attack = "Not in range";
+        }
     }
 
     $_SESSION['queen_result'] = $attack;
@@ -70,5 +71,5 @@ function queen_form_submit($form, &$form_state) {
 
 function queen_attack() {
     $answer = $_SESSION['queen_result'];
-    return 'Here is the result' . $answer;
+    return 'The Queen is: ' . $answer;
 }
