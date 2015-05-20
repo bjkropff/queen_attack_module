@@ -3,7 +3,7 @@ function queen_menu() {
     $items['queen'] = array(
         'title' => "Queen",
         'page callback' => 'drupal_get_form',
-        'page argument' => array('queen_form')
+        'page argument' => array('queen_form'),
         'access callback' => TRUE,
         'type' => MENU_NORMAL_ITEM,
     );
@@ -33,24 +33,24 @@ function queen_form() {
         '#type' => 'textfield',
         '#description' => t('Please enter ending X coordinate.'),
     );
-    $form['end_x'] = array(
+    $form['end_y'] = array(
         '#title' => 'End Y',
         '#type' => 'textfield',
         '#description' => t('Please enter ending Y coordinate.'),
     );
     $form['submit'] = array(
         '#type' => 'submit',
-        '#value' => 'Check Attack',
+        '#value' => 'Queen',
     );
 
     return $form;
 }
 
 function queen_form_submit($form, &$form_state) {
-    $start_x = intval($form_state['values']['start_x']);
-    $start_y = intval($form_state['values']['start_y']);
-    $end_x = intval($form_state['values']['end_x']);
-    $end_y = intval($form_state['values']['end_y']);
+    $start_x = $form_state['values']['start_x'];
+    $start_y = $form_state['values']['start_y'];
+    $end_x = $form_state['values']['end_x'];
+    $end_y = $form_state['values']['end_y'];
     $attack = "";
 
     if($start_x == $end_x && $start_y == $end_y) {
