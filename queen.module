@@ -70,5 +70,5 @@ function queen_form_submit($form, &$form_state) {
 
 function queen_attack() {
     $answer = $_SESSION['queen_result'];
-    return 'Here is the result';
+    return 'Here is the result' . $answer;
 }
